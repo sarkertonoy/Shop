@@ -1,67 +1,62 @@
 :root{
-
     --primary-color: #F26B68;
-
-    --text-color: #5DD9C1;
-
+--text-color: #5DD9C1;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
-nav{
+nav {
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-   position: absolute;
-   
+    position: absolute;
 
-    .logo img{
-       width: 80px;
+    .logo img {
+        width: 80px;
         height: 72px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
     }
-    ul{
+
+    ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        li{
+
+        li {
             padding: 28px;
             list-style: none;
-            a{
+
+            a {
                 text-decoration: none;
                 color: var(--text-color);
             }
         }
-       
     }
 }
 
-header{
+header {
     width: 100%;
     height: 500px;
     background: #190933;
-    img{
+
+    img {
         background-size: cover;
         width: 280px;
         position: absolute;
         right: 180px;
         top: 144px;
-       
-
-
-
     }
-    h1{
-       position: absolute;
+
+    h1 {
+        position: absolute;
         top: 252px;
         left: 220px;
         font-size: 3.2rem;
@@ -74,92 +69,216 @@ header{
     width: 100%;
     height: 288px;
     margin-top: 40px;
-    .title h1{
-                text-align: center;
+
+    .title h1 {
+        text-align: center;
         margin-bottom: 20px;
         font-size: 2rem;
         color: var(--primary-color);
-    } 
+    }
+
     .content {
-       width: 80%;
-       height: 300px;
+        width: 80%;
+        height: 300px;
         position: absolute;
         left: 122px;
         background: #665687;
-     p{
-        font-size: 1rem;
+
+        p {
+            font-size: 1rem;
             padding: 56px 110px;
             text-align: center;
             margin-top: 10px;
             color: var(--text-color);
+        }
     }
-}
 }
 
 .shop {
-     width: 100%;
+    width: 100%;
     height: 288px;
-    margin-top: 100px; 
+    margin-top: 100px;
     position: absolute;
-   
-      .title h1{
-                text-align: center;
+
+    .title h1 {
+        text-align: center;
         margin-bottom: 20px;
         font-size: 2rem;
-        color: var(--primary-color);
+        color: var(--text-color);
     }
-    .row{
+
+    .row {
         width: 80%;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         position: absolute;
         left: 116px;
-        .col{
+
+        .col {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
             align-items: center;
             border: 1px solid black;
-            .col-image 
-            img {
-                   background-size: cover;
+
+            .col-image img {
+                background-size: cover;
                 height: 100px;
                 width: 88px;
                 margin: 28px 0px;
                 border-radius: 50%;
             }
+
             .col-content {
                 margin: 12px 12px;
-                h2{
+
+                h2 {
                     font-size: 1.6rem;
-                    text-align: center;
-                    
-                }p{
-                    font-size: 1rem;
                     text-align: center;
                 }
 
+                p {
+                    font-size: 1rem;
+                    text-align: center;
+                }
             }
         }
+    }
+}
+
+.footer {
+    background-color: #190933;
+    padding: 15px 0;
+    text-align: center;
+    color: var(--primary-color);
+    position: relative;
+    bottom: -460px;
+    width: 100%;
+
+    .footer-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    header {
+        img {
+            right: 100px;
         }
-        
-        
+
+        h1 {
+            left: 100px;
+            font-size: 2.8rem;
+        }
     }
 
- .footer {
-  background-color: #190933;
-  padding: 15px 0;
-  text-align: center;
-  color: var(--primary-color);
-  position: relative;
-  bottom: -460px;
-  width: 100%;
-  .footer-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+    .about .content,
+    .shop .row {
+        width: 90%;
+        left: 5%;
+    }
+
+    .about .content p {
+        padding: 40px 60px;
+    }
 }
 
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
 
+        ul {
+            flex-direction: column;
 
+            li {
+                padding: 10px;
+            }
+        }
+    }
+
+    header {
+        height: 400px;
+
+        img {
+            width: 200px;
+            right: 50px;
+            top: 120px;
+        }
+
+        h1 {
+            top: 200px;
+            left: 50px;
+            font-size: 2.2rem;
+        }
+    }
+
+    .about {
+        height: auto;
+        margin-top: 20px;
+
+        .content {
+            position: relative;
+            left: auto;
+            margin: 0 auto;
+            height: auto;
+
+            p {
+                padding: 30px;
+            }
+        }
+    }
+
+    .shop {
+        position: relative;
+        height: auto;
+        margin-top: 50px;
+        bottom: auto;
+
+        .row {
+            position: relative;
+            left: auto;
+            margin: 0 auto;
+            flex-wrap: wrap;
+
+            .col {
+                margin-bottom: 20px;
+                width: 45%;
+            }
+        }
+    }
+
+    .footer {
+        position: relative;
+        bottom: auto;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        img {
+            width: 150px;
+            right: 20px;
+            top: 200px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            left: 20px;
+            top: 240px;
+        }
+    }
+
+    .shop .row .col {
+        width: 90%;
+    }
+
+    .about .content p {
+        padding: 20px;
+    }
+}
